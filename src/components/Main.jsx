@@ -8,7 +8,7 @@ export default class Main extends React.Component {
   render() {
     const { user }= this.props;
     return (
-      <h1>{user.token}</h1>
+      <h1>{user.created}</h1>
     );
   }
 }

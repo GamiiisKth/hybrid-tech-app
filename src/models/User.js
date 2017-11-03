@@ -9,9 +9,10 @@ class User {
   @observable time;
   @observable message= {
     email: '',
-    password: ''
+    password: '',
   };
   @observable targetEnvironment = [];
+  @observable created;
 
   @action
   setEmail(email) {
@@ -51,6 +52,11 @@ class User {
   @action
   setMessage(message) {
     this.message = message;
+  }
+
+  @action
+  setCreated(created) {
+    this.created = created;
   }
 }
 

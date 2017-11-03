@@ -210,9 +210,7 @@ const getWebpackConfig = (options = ({}), privateOptions = ({})) => {
         path.resolve(__dirname, 'src')
       ]
     },
-    externals: [{
-      'electron-config': 'electron-config'
-    }]
+    externals: []
       .concat(isTest ? nodeExternals() : [])
   });
 };

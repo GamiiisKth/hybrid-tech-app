@@ -41,19 +41,12 @@
     "test:watch:coverage": "npm run test:coverage:watch"
   },
   "dependencies": {
-    "async": "^2.5.0",
-    "buffer-shims": "^1.0.0",
     "cordova-android": "^6.3.0",
     "cordova-ios": "^4.5.3",
     "cordova-plugin-add-swift-support": "^1.7.0",
     "cordova-plugin-cocoapod-support": "^1.3.0",
-    "ecp-plugin": "git+ssh://git@bitbucket.electrolux.io:7999/sdk/ecp-plugin.git",
-    "find-java-home": "0.2.0",
-    "glob": "7.1.2",
-    "java": "^0.9.0",
-    "lodash": "4.17.4",
-    "xcode": "^1.0.0",
-    "cordova-plugin-whitelist": "1"
+    "cordova-plugin-whitelist": "^1.3.2",
+    "ecp-plugin": "git+ssh://git@bitbucket.electrolux.io:7999/sdk/ecp-plugin.git"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
@@ -88,7 +81,6 @@
     "inline-style-prefixer": "^3.0.8",
     "istanbul-instrumenter-loader": "^2.0.0",
     "jsdom": "^9.12.0",
-    "lodash": "^4.2.0",
     "material-ui": "^0.19.4",
     "memory-fs": "^0.4.1",
     "mobx": "^3.2.1",

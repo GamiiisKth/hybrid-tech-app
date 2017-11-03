@@ -29,6 +29,6 @@
     <plugin name="cordova-plugin-add-swift-support" spec="^1.7.0" />
     <plugin name="ecp-plugin" spec="git+ssh://git@bitbucket.electrolux.io:7999/sdk/ecp-plugin.git" />
     <plugin name="cordova-plugin-cocoapod-support" spec="^1.3.0" />
-    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
     <engine name="android" spec="~6.3.0" />
 </widget>

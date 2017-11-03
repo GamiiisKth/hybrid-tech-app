@@ -1,9 +1,5 @@
-import { action } from 'mobx';
 import stateProvider from './StateProvider';
-
-const mobilesdk = require('../../platforms/android/platform_www/plugins/ecp-plugin/www/mobilesdk');
- require('../../platforms/android/platform_www/cordova');
- require('../../platforms/android/platform_www/cordova_plugins');
+import {action} from 'mobx';
 const hint = 'hejhej1255521';
 
 const configObject = {
@@ -18,12 +14,18 @@ class LoginService {
 
   @action
   executeLogin = () => {
-    cordov
     return new Promise((resolve, reject) => {
       const { password } = stateProvider.user;
       // TODO call store to send the call to
-      mobilesdk.EcpConfiguration.create(configObject, sucess => stateProvider.user.setToken(sucess), failed => stateProvider.user.setToken(failed));
-      console.log(stateProvider.user.token);
+
+      mobilesdk.EcpConfiguration.create(configObject, function(succ){
+        console.log("ECP succ"+JSON.stringify(succ));
+        stateProvider.user.setCreated("succ")
+      }, function(err){
+        console.log("ECP err"+JSON.stringify(err));
+        stateProvider.user.setCreated("err")
+      });
+
       if (password === hint) {
         resolve(true);
       } else {
@@ -39,6 +41,7 @@ class LoginService {
     loginAttempt.then(resolve => {
       // TODO fix the routing to main page
       console.log('success ' + resolve);
+      stateProvider.user.setToken(stateProvider.user.token);
       const token = Math.random().toString(36).substring(7);
       const time = Date.now();
       stateProvider.user.setToken(token);
