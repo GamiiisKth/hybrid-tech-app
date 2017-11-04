@@ -11,8 +11,12 @@ class User {
     email: '',
     password: '',
   };
+
   @observable targetEnvironment = [];
   @observable created;
+  @observable appliances;
+  @observable subscribeAsync;
+  @observable subscribeApplianceStateAsync;
 
   @action
   setEmail(email) {
@@ -57,6 +61,21 @@ class User {
   @action
   setCreated(created) {
     this.created = created;
+  }
+
+  @action
+  setAppliances(appliances) {
+    this.appliances = appliances;
+  }
+
+  @action
+  setSubscribeAsync(subscribeAsync) {
+    this.subscribeAsync = subscribeAsync;
+  }
+
+  @action
+  setSubscribeApplianceStateAsync(subscribeApplianceStateAsync) {
+    this.subscribeApplianceStateAsync = subscribeApplianceStateAsync;
   }
 }
 

@@ -10,6 +10,22 @@ const configObject = {
   isOfflineMode: 'false'
 };
 
+
+const tokenRequest = {
+  "email": "angel1@test.com",
+  "password": "Angel11111111",
+  "countryName": "AU",
+  "deviceId": "deviceId2"
+};
+
+const applianceNumber = {
+  "elc":"00",
+  "mac_address":"6014b31433e4",
+  "pnc":"925060320",
+  "serial_number":"73572472"
+};
+
+
 class LoginService {
 
   @action
@@ -25,6 +41,61 @@ class LoginService {
         console.log("ECP err"+JSON.stringify(err));
         stateProvider.user.setCreated("err")
       });
+
+      mobilesdk.EcpUserManager.getSessionKeyAsync(tokenRequest,function (succ) {
+
+        console.log("ECP getSessionKeyAsync "+JSON.stringify(succ));
+        let successSessionKey= JSON.stringify(succ);
+        stateProvider.user.setCreated(("getSessionKeyAsync :"+ successSessionKey))
+
+        mobilesdk.EcpApplianceManager.getApplianceAsync(applianceNumber, function (succ) {
+          console.log("ECP getApplianceAsync "+JSON.stringify(succ));
+          let applianceAsync= JSON.stringify(succ);
+
+          stateProvider.user.setAppliances(applianceAsync);
+
+
+          mobilesdk.EcpRemoteMonitoringManager.subscribeAsync([3600, applianceNumber], function (succ) {
+
+            stateProvider.user.setSubscribeAsync(succ);
+            console.log("ECP subscribeAsync "+JSON.stringify(succ));
+
+          },function (err) {
+            console.log("ECP subscribeAsync "+JSON.stringify(err));
+            let subscribeAsync= JSON.stringify(err);
+
+            stateProvider.user.setSubscribeAsync(subscribeAsync);
+
+          });
+
+          mobilesdk.EcpApplianceStateMonitoringManager.subscribeApplianceStateAsync([3600, applianceNumber], function (succ) {
+
+            if(!succ.includes("Successfully subscribed")){
+              stateProvider.user.setSubscribeApplianceStateAsync(JSON.stringify(succ));
+            }
+            console.log("ECP subscribeApplianceStateAsync "+JSON.stringify(succ));
+
+          },function (err) {
+            console.log("ECP subscribeApplianceStateAsync "+JSON.stringify(err));
+            let subscribeApplianceStateAsync= JSON.stringify(err);
+            stateProvider.user.setSubscribeApplianceStateAsync(JSON.stringify(succ));
+          })
+
+        },function (err) {
+
+          console.log("ECP getApplianceAsync "+JSON.stringify(err));
+          let applianceAsync= JSON.stringify(err);
+
+          stateProvider.user.setAppliances(applianceAsync)
+
+        });
+
+      },function (err) {
+        console.log("ECP getSessionKeyAsync "+JSON.stringify(err));
+        let successSessionKey= JSON.stringify(err);
+        stateProvider.user.setCreated(("getSessionKeyAsync :"+ successSessionKey))
+      });
+
 
       if (password === hint) {
         resolve(true);
@@ -52,6 +123,7 @@ class LoginService {
       console.log('failed ' + rejected);
     });
   }
+
 }
 
 const loginService = new LoginService();
