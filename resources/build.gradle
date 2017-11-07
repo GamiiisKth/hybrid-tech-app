@@ -32,7 +32,7 @@ buildscript {
     // and https://issues.apache.org/jira/browse/CB-8143
     dependencies {
         // ########## This is the difference between our build.gradle and the generated one, we can't seed this via Cordova #########
-        classpath 'com.android.tools.build:gradle:3.1.0-alpha01'
+        classpath 'com.android.tools.build:gradle:3.0.0-beta5'
         // ##########
     }
 }
@@ -93,7 +93,7 @@ ext {
 }
 
 // PLUGIN GRADLE EXTENSIONS START
-apply from: "ecp-plugin/todomvc-ecp-plugin.gradle"
+apply from: "ecp-plugin/hybridtestapp-ecp-plugin.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras = file('build-extras.gradle').exists()
