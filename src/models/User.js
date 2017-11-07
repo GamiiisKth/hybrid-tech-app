@@ -17,6 +17,7 @@ class User {
   @observable appliances;
   @observable subscribeAsync;
   @observable subscribeApplianceStateAsync;
+  @observable configurationProfile;
 
   @action
   setEmail(email) {
@@ -76,6 +77,11 @@ class User {
   @action
   setSubscribeApplianceStateAsync(subscribeApplianceStateAsync) {
     this.subscribeApplianceStateAsync = subscribeApplianceStateAsync;
+  }
+
+  @action
+  setConfigurationProfile(configurationProfile) {
+    this.configurationProfile = configurationProfile;
   }
 }
 

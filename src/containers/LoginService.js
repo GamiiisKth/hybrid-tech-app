@@ -1,6 +1,6 @@
 import stateProvider from './StateProvider';
 import {action} from 'mobx';
-const hint = 'hejhej1255521';
+const hint = '1234';
 
 const configObject = {
   baseUrl: 'https://api.eu.apiconnect.ibmcloud.com/electrolux-europe-dev/uat/',
@@ -23,6 +23,13 @@ const applianceNumber = {
   "mac_address":"6014b31433e4",
   "pnc":"925060320",
   "serial_number":"73572472"
+};
+
+const applianceNumber2 = {
+  "elc":"00",
+  "mac_address":"6014B314345E",
+  "pnc":"925060324",
+  "serial_number":"35324026"
 };
 
 
@@ -48,14 +55,14 @@ class LoginService {
         let successSessionKey= JSON.stringify(succ);
         stateProvider.user.setCreated(("getSessionKeyAsync :"+ successSessionKey))
 
-        mobilesdk.EcpApplianceManager.getApplianceAsync(applianceNumber, function (succ) {
+        mobilesdk.EcpApplianceManager.getApplianceAsync(applianceNumber2, function (succ) {
           console.log("ECP getApplianceAsync "+JSON.stringify(succ));
           let applianceAsync= JSON.stringify(succ);
 
           stateProvider.user.setAppliances(applianceAsync);
 
 
-          mobilesdk.EcpRemoteMonitoringManager.subscribeAsync([3600, applianceNumber], function (succ) {
+          mobilesdk.EcpRemoteMonitoringManager.subscribeAsync([3600, applianceNumber2], function (succ) {
 
             stateProvider.user.setSubscribeAsync(succ);
             console.log("ECP subscribeAsync "+JSON.stringify(succ));
@@ -68,7 +75,7 @@ class LoginService {
 
           });
 
-          mobilesdk.EcpApplianceStateMonitoringManager.subscribeApplianceStateAsync([3600, applianceNumber], function (succ) {
+          mobilesdk.EcpApplianceStateMonitoringManager.subscribeApplianceStateAsync([3600, applianceNumber2], function (succ) {
 
             if(!succ.includes("Successfully subscribed")){
               stateProvider.user.setSubscribeApplianceStateAsync(JSON.stringify(succ));
@@ -79,13 +86,12 @@ class LoginService {
             console.log("ECP subscribeApplianceStateAsync "+JSON.stringify(err));
             let subscribeApplianceStateAsync= JSON.stringify(err);
             stateProvider.user.setSubscribeApplianceStateAsync(JSON.stringify(succ));
-          })
+          });
 
         },function (err) {
 
           console.log("ECP getApplianceAsync "+JSON.stringify(err));
           let applianceAsync= JSON.stringify(err);
-
           stateProvider.user.setAppliances(applianceAsync)
 
         });
@@ -94,6 +100,19 @@ class LoginService {
         console.log("ECP getSessionKeyAsync "+JSON.stringify(err));
         let successSessionKey= JSON.stringify(err);
         stateProvider.user.setCreated(("getSessionKeyAsync :"+ successSessionKey))
+      });
+
+
+      mobilesdk.EcpConfigurationManager.getConfigurationProfile(applianceNumber2, function(succ){
+        console.log("getConfigurationProfile........");
+        var res = JSON.parse(succ);
+        console.log("getConfigurationProfile"  +  JSON.stringify(succ));
+
+        stateProvider.user.setConfigurationProfile(JSON.stringify(succ))
+
+      }, function(err){
+        console.log("getConfigurationProfile" + JSON.stringify(err));
+        stateProvider.user.setConfigurationProfile(JSON.stringify(err))
       });
 
 

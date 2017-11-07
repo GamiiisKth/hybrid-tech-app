@@ -9,6 +9,11 @@ export default class Main extends React.Component {
     const { user }= this.props;
     return (
       <div>
+        <h2>---------------configurationProfile--------------</h2>
+        <h6>
+          {user.configurationProfile}
+        </h6>
+
       <h1>{user.created}</h1>
       <h1>{user.appliances}</h1>
         <h2>---------------subscribeAsync--------------</h2>

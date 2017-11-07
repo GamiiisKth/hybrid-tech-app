@@ -1,0 +1,30 @@
+[
+  {
+    "file": "app.css",
+    "hash": "2774892414194ca944e5fd780e95e2b1"
+  },
+  {
+    "file": "app.css.map",
+    "hash": "da17690d7bc5ab9b53c0d585157c8a3d"
+  },
+  {
+    "file": "app.js",
+    "hash": "5a57e44d608dae0b80ccf251619e0e83"
+  },
+  {
+    "file": "app.js.map",
+    "hash": "3fc35d1125fd2bd2c583446c96f11470"
+  },
+  {
+    "file": "app.min.css",
+    "hash": "d4c5160f015aae028e9ba4775c5acf99"
+  },
+  {
+    "file": "app.min.js",
+    "hash": "a5c5ef1dab2ec6ecb47c68ace18467d3"
+  },
+  {
+    "file": "index.html",
+    "hash": "73f895d52f97518aafae43d5c7ef93d7"
+  }
+]

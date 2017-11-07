@@ -1,0 +1,207 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<preference name=\"loadUrlTimeoutValue\" value=\"60000\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"HotCodePush\"><param name=\"android-package\" value=\"com.nordnetab.chcp.main.HotCodePushPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CacheClear\"><param name=\"android-package\" value=\"com.anrip.cordova.CacheClear\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpApplianceStateMonitoringManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpApplianceStateMonitoringManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpApplianceManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpApplianceManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpConfigurationManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpConfigurationManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpEnrollmentManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpEnrollmentManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpLocalizationManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpLocalizationManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpOnboardingManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpOnboardingManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpOtaManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpOtaManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpRemoteControlManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpRemoteControlManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpRemoteMonitoringManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpRemoteMonitoringManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpReportManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpReportManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpUserManagerPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpUserManagerPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"EcpConfigurationPlugin\"><param name=\"android-package\" value=\"com.electrolux.ecp.client.sdk.api.EcpConfigurationPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 2
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CHANGE_WIFI_MULTICAST_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.USE_FINGERPRINT\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<service android:name=\"org.eclipse.paho.android.service.MqttService\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-hot-code-push-plugin": {
+            "PACKAGE_NAME": "com.example.todomvc"
+        },
+        "cordova-plugin-add-swift-support": {
+            "PACKAGE_NAME": "com.example.todomvc"
+        },
+        "cordova-plugin-cache-clear": {
+            "PACKAGE_NAME": "com.example.todomvc"
+        },
+        "cordova-plugin-cocoapod-support": {
+            "PACKAGE_NAME": "com.example.todomvc"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.example.todomvc"
+        },
+        "ecp-plugin": {
+            "PACKAGE_NAME": "com.example.todomvc"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "id": "cordova-hot-code-push-plugin.chcp",
+            "file": "plugins/cordova-hot-code-push-plugin/www/chcp.js",
+            "pluginId": "cordova-hot-code-push-plugin",
+            "clobbers": [
+                "chcp"
+            ]
+        },
+        {
+            "id": "cordova-plugin-cache-clear.CacheClear",
+            "file": "plugins/cordova-plugin-cache-clear/www/CacheClear.js",
+            "pluginId": "cordova-plugin-cache-clear",
+            "clobbers": [
+                "CacheClear"
+            ]
+        },
+        {
+            "id": "ecp-plugin.mobilesdk",
+            "file": "plugins/ecp-plugin/www/mobilesdk.js",
+            "pluginId": "ecp-plugin",
+            "clobbers": [
+                "mobilesdk"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-hot-code-push-plugin": "1.5.3",
+        "cordova-plugin-add-swift-support": "1.7.0",
+        "cordova-plugin-cache-clear": "1.3.7",
+        "cordova-plugin-cocoapod-support": "1.3.0",
+        "cordova-plugin-whitelist": "1.3.2",
+        "ecp-plugin": "1.3.2"
+    }
+}

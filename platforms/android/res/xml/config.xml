@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.example.todomvc" version="1.1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="HotCodePush">
+        <param name="android-package" value="com.nordnetab.chcp.main.HotCodePushPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="CacheClear">
+        <param name="android-package" value="com.anrip.cordova.CacheClear" />
+    </feature>
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpApplianceStateMonitoringManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpApplianceStateMonitoringManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpApplianceManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpApplianceManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpConfigurationManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpConfigurationManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpEnrollmentManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpEnrollmentManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpLocalizationManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpLocalizationManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpOnboardingManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpOnboardingManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpOtaManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpOtaManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpRemoteControlManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpRemoteControlManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpRemoteMonitoringManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpRemoteMonitoringManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpReportManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpReportManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpUserManagerPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpUserManagerPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="EcpConfigurationPlugin">
+        <param name="android-package" value="com.electrolux.ecp.client.sdk.api.EcpConfigurationPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <hook src="hooks/build.sh" type="before_prepare" />
+    <name>ecp-plugin</name>
+    <description>
+    Electrolux Connected Platform application for Hybrid API testing.
+  </description>
+    <author email="dev@electrolux.com" href="http://electrolux.com">
+    Electrolux
+  </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <hook src="hooks/overridegradleconfig.sh" type="after_platform_add" />
+    <allow-intent href="market:*" />
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="loadUrlTimeoutValue" value="60000" />
+    <preference name="android-minSdkVersion" value="21" />
+</widget>
