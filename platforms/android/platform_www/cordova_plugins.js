@@ -1,19 +1,43 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
   {
-    "id": "cordova-hot-code-push-plugin.chcp",
-    "file": "plugins/cordova-hot-code-push-plugin/www/chcp.js",
-    "pluginId": "cordova-hot-code-push-plugin",
+    "id": "bms-core.BMSClient",
+    "file": "plugins/bms-core/www/BMSClient.js",
+    "pluginId": "bms-core",
     "clobbers": [
-      "chcp"
+      "BMSClient"
     ]
   },
   {
-    "id": "cordova-plugin-cache-clear.CacheClear",
-    "file": "plugins/cordova-plugin-cache-clear/www/CacheClear.js",
-    "pluginId": "cordova-plugin-cache-clear",
+    "id": "bms-core.BMSRequest",
+    "file": "plugins/bms-core/www/BMSRequest.js",
+    "pluginId": "bms-core",
     "clobbers": [
-      "CacheClear"
+      "BMSRequest"
+    ]
+  },
+  {
+    "id": "bms-core.BMSLogger",
+    "file": "plugins/bms-core/www/BMSLogger.js",
+    "pluginId": "bms-core",
+    "clobbers": [
+      "BMSLogger"
+    ]
+  },
+  {
+    "id": "bms-core.BMSAnalytics",
+    "file": "plugins/bms-core/www/BMSAnalytics.js",
+    "pluginId": "bms-core",
+    "clobbers": [
+      "BMSAnalytics"
+    ]
+  },
+  {
+    "id": "bms-core.BMSAuthorizationManager",
+    "file": "plugins/bms-core/www/BMSAuthorizationManager.js",
+    "pluginId": "bms-core",
+    "clobbers": [
+      "BMSAuthorizationManager"
     ]
   },
   {
@@ -28,10 +52,9 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "cordova-hot-code-push-plugin": "1.5.3",
-  "cordova-plugin-add-swift-support": "1.7.0",
-  "cordova-plugin-cache-clear": "1.3.7",
   "cordova-plugin-cocoapod-support": "1.3.0",
+  "cordova-plugin-add-swift-support": "1.7.0",
+  "bms-core": "2.3.9",
   "cordova-plugin-whitelist": "1.3.2",
   "ecp-plugin": "1.3.2"
 };

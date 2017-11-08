@@ -52,7 +52,7 @@ class LoginComponent extends Component {
             floatingLabelStyle={{color:'#ffffff'}}
             inputStyle={{fontColor:'#ffffff',color:'#ffffff'}}
             hintText="Hint Text"
-            floatingLabelText="Jaffar"
+            floatingLabelText="AAAAAA"
             onChange={e => user.setEmail(e.target.value)}
             errorText={user.message.email}
           />

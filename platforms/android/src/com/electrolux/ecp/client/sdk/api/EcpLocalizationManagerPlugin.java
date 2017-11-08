@@ -69,7 +69,7 @@ public final class EcpLocalizationManagerPlugin extends CordovaPlugin {
         final EcpCallback<EcpConfigurationBundle> callback = new EcpCallback<EcpConfigurationBundle>() {
             @Override
             public void onSuccess(EcpConfigurationBundle configurationBundle) {
-                mApplianceProfile = EcpApplianceProfile.from(configurationBundle.getProfile(), cordova.getActivity().getApplicationContext());
+                mApplianceProfile = EcpApplianceProfile.from(applianceNumber, configurationBundle.getProfile(), configurationBundle.getLocalizationProfile(), cordova.getActivity().getApplicationContext());
                 mLocalizationManager = new EcpLocalizationManager(configurationBundle.getLocalizationProfile());
                 /*mManager.getAssetsAsync(new EcpSimpleCallback<List<EcpAssetProfile.AssetBundle>>(cordova.getActivity()) {
                     @Override
@@ -106,7 +106,7 @@ public final class EcpLocalizationManagerPlugin extends CordovaPlugin {
         final EcpCallback<EcpConfigurationBundle> callback = new EcpCallback<EcpConfigurationBundle>() {
             @Override
             public void onSuccess(EcpConfigurationBundle configurationBundle) {
-                mApplianceProfile = EcpApplianceProfile.from(configurationBundle.getProfile(), cordova.getActivity().getApplicationContext());
+                mApplianceProfile = EcpApplianceProfile.from(applianceNumber, configurationBundle.getProfile(), configurationBundle.getLocalizationProfile(), cordova.getActivity().getApplicationContext());
                 mLocalizationManager = new EcpLocalizationManager(configurationBundle.getLocalizationProfile());
                 /*mManager.getAssetsAsync(new EcpSimpleCallback<List<EcpAssetProfile.AssetBundle>>(cordova.getActivity()) {
                     @Override

@@ -1,11 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.example.todomvc" version="1.1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <feature name="HotCodePush">
-        <param name="android-package" value="com.nordnetab.chcp.main.HotCodePushPlugin" />
-        <param name="onload" value="true" />
+    <feature name="BMSClient">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVBMSClient" />
     </feature>
-    <feature name="CacheClear">
-        <param name="android-package" value="com.anrip.cordova.CacheClear" />
+    <feature name="BMSRequest">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVBMSRequest" />
+    </feature>
+    <feature name="BMSLogger">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVBMSLogger" />
+    </feature>
+    <feature name="BMSAnalytics">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVBMSAnalytics" />
+    </feature>
+    <feature name="BMSAuthorizationManager">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVBMSAuthorizationManager" />
+    </feature>
+    <feature name="BMSAuthenticationContext">
+        <param name="android-package" value="com.ibm.mobilefirstplatform.clientsdk.cordovaplugins.core.CDVBMSAuthenticationContext" />
     </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
@@ -60,14 +71,14 @@
         <param name="onload" value="true" />
     </feature>
     <hook src="hooks/build.sh" type="before_prepare" />
-    <name>ecp-plugin</name>
+    <hook src="hooks/overridegradleconfig.sh" type="after_platform_add" />
+    <name>TodoMvc</name>
     <description>
-    Electrolux Connected Platform application for Hybrid API testing.
-  </description>
-    <author email="dev@electrolux.com" href="http://electrolux.com">
-    Electrolux
-  </author>
-    <content src="index.html" />
+        A sample Apache Cordova application that responds to the deviceready event.
+    </description>
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
+    </author>
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -75,9 +86,9 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <hook src="hooks/overridegradleconfig.sh" type="after_platform_add" />
+    <allow-navigation clive="true" href="http://*/*" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
-    <preference name="loadUrlTimeoutValue" value="60000" />
-    <preference name="android-minSdkVersion" value="21" />
+    <preference name="android-minSdkVersion" value="22" />
+    <preference name="android-targetSdkVersion" value="26" />
 </widget>

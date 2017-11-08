@@ -32,7 +32,7 @@ buildscript {
     // and https://issues.apache.org/jira/browse/CB-8143
     dependencies {
         // ########## This is the difference between our build.gradle and the generated one, we can't seed this via Cordova #########
-        classpath 'com.android.tools.build:gradle:3.0.0-beta5'
+        classpath 'com.android.tools.build:gradle:3.1.0-alpha02'
         // ##########
     }
 }

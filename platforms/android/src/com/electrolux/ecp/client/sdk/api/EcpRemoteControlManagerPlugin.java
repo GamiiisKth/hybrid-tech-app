@@ -100,7 +100,7 @@ public final class EcpRemoteControlManagerPlugin extends CordovaPlugin {
                 mConfiguration.storeConfiguration(applianceNumber, ecpConfigurationBundle);
                 final EcpApplianceProfile applianceProfile = mConfiguration.findConfigurationByApplianceNumber(applianceNumber);
                 final EcpApplianceState applianceState = new EcpApplianceState(applianceProfile);
-                final List<EcpBaseComponent> applianceComponents = applianceProfile.getComponents(applianceState);
+                final List<EcpBaseComponent> applianceComponents = applianceProfile.getComponentsStatically();
                 EcpBaseComponent targetComponent = null;
                 for (EcpBaseComponent component : applianceComponents) {
                     if (component.getKey().equals(commandName)) {
