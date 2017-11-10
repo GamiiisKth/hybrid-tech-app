@@ -55,14 +55,14 @@ class LoginService {
         let successSessionKey= JSON.stringify(succ);
         stateProvider.user.setCreated(("getSessionKeyAsync :"+ successSessionKey))
 
-        mobilesdk.EcpApplianceManager.getApplianceAsync(applianceNumber2, function (succ) {
+        mobilesdk.EcpApplianceManager.getApplianceAsync(applianceNumber, function (succ) {
           console.log("ECP getApplianceAsync "+JSON.stringify(succ));
           let applianceAsync= JSON.stringify(succ);
 
           stateProvider.user.setAppliances(applianceAsync);
 
 
-          mobilesdk.EcpRemoteMonitoringManager.subscribeAsync([3600, applianceNumber2], function (succ) {
+          mobilesdk.EcpRemoteMonitoringManager.subscribeAsync([3600, applianceNumber], function (succ) {
 
             stateProvider.user.setSubscribeAsync(succ);
             console.log("ECP subscribeAsync "+JSON.stringify(succ));
@@ -75,7 +75,7 @@ class LoginService {
 
           });
 
-          mobilesdk.EcpApplianceStateMonitoringManager.subscribeApplianceStateAsync([3600, applianceNumber2], function (succ) {
+          mobilesdk.EcpApplianceStateMonitoringManager.subscribeApplianceStateAsync([3600, applianceNumber], function (succ) {
 
             if(!succ.includes("Successfully subscribed")){
               stateProvider.user.setSubscribeApplianceStateAsync(JSON.stringify(succ));
@@ -103,7 +103,7 @@ class LoginService {
       });
 
 
-      mobilesdk.EcpConfigurationManager.getConfigurationProfile(applianceNumber2, function(succ){
+      mobilesdk.EcpConfigurationManager.getConfigurationProfile(applianceNumber, function(succ){
         console.log("getConfigurationProfile........");
         var res = JSON.parse(succ);
         console.log("getConfigurationProfile"  +  JSON.stringify(succ));

@@ -27,8 +27,12 @@ ifndef BUILD_NUMBER
 endif
 	${CORDOVA} build android -- --gradleArg=-PcdvVersionCode=$$BUILD_NUMBER --verbose
 
-run-android:
-	 ${CORDOVA} run android
+build-run-android:
+	rm -rf platforms/android/build/outputs/apk/*
+	cordova build android
+	mv platforms/android/build/outputs/apk/debug/android-debug.apk platforms/android/build/outputs/apk/
+	rm -rf platforms/android/build/outputs/apk/debug/
+	cordova  run android --nobuild
 
 publish-android: export APP_VERSION=${VERSION}-${GIT_VERSION} 
 publish-android:
@@ -38,9 +42,8 @@ beta-android: export APP_VERSION=${VERSION}-${GIT_VERSION}
 beta-android:
 	${FASTLANE} android beta
 
-ios:
-	cordova build ios --device
-
+build-ios:
+	echo('hallo')
 list-plugins:
 	${CORDOVA} plugin ls
 

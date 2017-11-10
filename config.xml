@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.todomvc" version="1.1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.electrolux.ecp.sdk.hybrid" version="1.1.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <hook src="hooks/build.sh" type="before_prepare" />
     <hook src="hooks/overridegradleconfig.sh" type="after_platform_add" />
-    <name>TodoMvc</name>
+    <name>Hybrid</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
@@ -22,15 +22,16 @@
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
+        <preference name="Orientation" value="all" />
+        <preference name="UseSwiftLanguageVersion" value="4.0" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
     <allow-navigation clive="true" href="http://*/*" />
     <engine name="android" spec="^6.3.0" />
     <engine name="ios" spec="^4.5.3" />
-    <plugin name="cordova-plugin-add-swift-support" spec="^1.7.0" />
-    <plugin name="ecp-plugin" spec="git+ssh://git@bitbucket.electrolux.io:7999/sdk/ecp-plugin.git" />
+    <plugin name="ecp-plugin" spec="file:../ecp-plugin" />
     <plugin name="cordova-plugin-cocoapod-support" spec="^1.3.0" />
     <plugin name="cordova-plugin-whitelist" spec="^1.3.2" />
-    <plugin name="bms-core" spec="^2.3.9" />
+    <plugin name="cordova-plugin-add-swift-support" spec="^1.7.0" />
 </widget>

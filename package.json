@@ -41,14 +41,13 @@
     "test:watch:coverage": "npm run test:coverage:watch"
   },
   "dependencies": {
-    "bms-core": "^2.3.9",
     "cordova-android": "^6.3.0",
     "cordova-ios": "^4.5.3",
     "cordova-plugin-add-swift-support": "^1.7.0",
     "cordova-plugin-cocoapod-support": "^1.3.0",
+    "cordova-plugin-okhttp": "^2.0.0",
     "cordova-plugin-whitelist": "^1.3.2",
-    "ecp-plugin": "git+ssh://git@bitbucket.electrolux.io:7999/sdk/ecp-plugin.git",
-    "xcode": "^0.9.3"
+    "ecp-plugin": "file:../ecp-plugin"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
@@ -117,8 +116,7 @@
       "cordova-plugin-add-swift-support": {},
       "ecp-plugin": {},
       "cordova-plugin-cocoapod-support": {},
-      "cordova-plugin-whitelist": {},
-      "bms-core": {}
+      "cordova-plugin-whitelist": {}
     },
     "platforms": [
       "android",

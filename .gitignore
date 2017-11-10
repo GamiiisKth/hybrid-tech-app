@@ -9,4 +9,4 @@ npm-debug.log
 .tmp
 .idea/
 package-lock.json
-.chcpenv
+platforms/
