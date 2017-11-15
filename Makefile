@@ -43,7 +43,14 @@ beta-android:
 	${FASTLANE} android beta
 
 build-ios:
-	echo('hallo')
+	rm -rf platforms
+	cordova plugin add ../ecp-plugin
+	cordova platform add  ios  --nofetch --verbose
+	cd platforms/ios/
+	pod install 
+	...
+	cordova build ios
+	
 list-plugins:
 	${CORDOVA} plugin ls
 

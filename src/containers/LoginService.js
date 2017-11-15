@@ -127,6 +127,9 @@ class LoginService {
 
   @action
   login() {
+    if(!stateProvider.user.appState === 'upToDate'){
+      return;
+    }
     const loginAttempt = this.executeLogin();
     loginAttempt.then(resolve => {
       // TODO fix the routing to main page
@@ -142,7 +145,6 @@ class LoginService {
       console.log('failed ' + rejected);
     });
   }
-
 }
 
 const loginService = new LoginService();

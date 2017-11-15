@@ -41,13 +41,21 @@
     "test:watch:coverage": "npm run test:coverage:watch"
   },
   "dependencies": {
-    "cordova-android": "^6.3.0",
+    "code-push": "^2.0.1-beta",
+    "cordova-android": "^6.4.0",
     "cordova-ios": "^4.5.3",
     "cordova-plugin-add-swift-support": "^1.7.0",
     "cordova-plugin-cocoapod-support": "^1.3.0",
+    "cordova-plugin-code-push": "^1.10.0-beta",
+    "cordova-plugin-device": "^1.1.7",
+    "cordova-plugin-dialogs": "^1.3.4",
+    "cordova-plugin-file": "^5.0.0",
+    "cordova-plugin-file-transfer": "^1.7.0",
     "cordova-plugin-okhttp": "^2.0.0",
-    "cordova-plugin-whitelist": "^1.3.2",
-    "ecp-plugin": "file:../ecp-plugin"
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-plugin-zip": "^3.1.0",
+    "ecp-plugin": "file:../ecp-plugin",
+    "xcode": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
@@ -113,10 +121,11 @@
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-add-swift-support": {},
       "ecp-plugin": {},
       "cordova-plugin-cocoapod-support": {},
-      "cordova-plugin-whitelist": {}
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-add-swift-support": {},
+      "cordova-plugin-code-push": {}
     },
     "platforms": [
       "android",

@@ -6,6 +6,7 @@ import elux from '../../style/img/elux_logo.png';
 import TargetEnvironment from './TargetEnvironment.jsx';
 
 import { blue500 } from 'material-ui/styles/colors';
+import Test from '../Test.jsx';
 
  const style = {
   floatingLabelFocusStyle: {
@@ -22,14 +23,9 @@ import { blue500 } from 'material-ui/styles/colors';
   },
 };
 
-
 @inject('user', 'loginService')
 @observer
 class LoginComponent extends Component {
-
-
-
-
 
   componentWillMount() {
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -37,7 +33,6 @@ class LoginComponent extends Component {
       isMountedAndCreatedByRouter: false
     };
   }
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.loginService.login();
@@ -52,7 +47,7 @@ class LoginComponent extends Component {
             floatingLabelStyle={{color:'#ffffff'}}
             inputStyle={{fontColor:'#ffffff',color:'#ffffff'}}
             hintText="Hint Text"
-            floatingLabelText="AAAAAA"
+            floatingLabelText="Johan aliii"
             onChange={e => user.setEmail(e.target.value)}
             errorText={user.message.email}
           />
