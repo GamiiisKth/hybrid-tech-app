@@ -1,17 +1,11 @@
 {
-  "env": {
-    "browser": true,
-    "node": false,
-    "jasmine": false
-  },
-  "ecmaFeatures": {
-    "modules": true
-  },
-  "globals": {
-    "__DEVTOOLS__": false
-  },
-  "extends": "../bin/webpack-eslint.js",
-  "rules": {
-    "strict": [2, "never"]
-  }
+	"env": {
+		"es6": true,
+		"node": true,
+		"browser": true
+	},
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"sourceType": "module"
+	}
 }

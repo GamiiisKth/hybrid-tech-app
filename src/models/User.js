@@ -19,6 +19,7 @@ class User {
   @observable subscribeApplianceStateAsync;
   @observable configurationProfile;
   @observable appState;
+  @observable appIsUpdated=0;
 
   @action
   setEmail(email) {
@@ -87,6 +88,11 @@ class User {
   @action
   setAppState(appState){
     this.appState=appState;
+  }
+
+  @action
+  setAppIsUpdated(appIsUpdated){
+    this.appIsUpdated=appIsUpdated;
   }
 }
 

@@ -3,6 +3,7 @@ import { Router, Route, hashHistory as history } from 'react-router';
 import { observer, inject } from 'mobx-react';
 import Login from '../components/authentication/login.jsx';
 import Main from '../components/Main.jsx';
+import Test from '../components/Test.jsx';
 
 @inject('user')
 @observer
@@ -30,6 +31,7 @@ export default class AppRouteComponent extends Component {
       <Router history={history}>
         <Route path="/main" component={Main} onEnter={this.checkAuth} />
         <Route path="/login" component={Login} />
+        <Route path="/test" component={Test} />
         <Route path="*" onEnter={this.handleRedirect} />
       </Router>
     );
